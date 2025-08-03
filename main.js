@@ -202,7 +202,7 @@ async function main() {
   }
 
   if (
-    mintOptions.mintOption === "Scheduled Mint" &&
+    mintOptions.mintOption === "scheduled" &&
     finalConfig &&
     finalConfig.publicStage.startTime
   ) {
@@ -210,7 +210,7 @@ async function main() {
       const startTime = finalConfig.publicStage.startTime.toNumber();
       const currentTime = Math.floor(Date.now() / 1000);
       if (currentTime < startTime) {
-        helpers.log.warning("Scheduling Mint...");
+        helpers.log.warning("scheduling Mint...");
         helpers.log.info(
           `Mint scheduled for [${blockchain.formatUnixTimestamp(startTime)}]`
         );
